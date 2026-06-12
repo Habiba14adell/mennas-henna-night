@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Menna's Henna Night</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f8efe4;
+    font-family:Garamond, serif;
+    color:#6b4b3e;
+}
+
+/* ========================= */
+/* HERO SECTION */
+/* ========================= */
+
+.hero{
+    height:100vh;
+    background:url("henna-bg.png") center/cover no-repeat;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    position:relative;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.25);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    color:white;
+    animation:fadeIn 2s ease;
+}
+
+.hero h1{
+    font-size:4rem;
+    letter-spacing:4px;
+}
+
+.hero h2{
+    font-size:1.5rem;
+    margin-top:15px;
+    font-weight:normal;
+}
+
+.hero p{
+    margin-top:20px;
+    font-size:1.1rem;
+}
+
+/* ========================= */
+/* COUNTDOWN */
+/* ========================= */
+
+.countdown-section{
+    padding:80px 20px;
+    text-align:center;
+}
+
+.countdown-title{
+    font-size:2.5rem;
+    margin-bottom:40px;
+}
+
+.countdown{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.box{
+    background:white;
+    width:130px;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.box span{
+    display:block;
+    font-size:2rem;
+    font-weight:bold;
+}
+
+.box p{
+    margin-top:10px;
+}
+
+/* ========================= */
+/* EVENT DETAILS */
+/* ========================= */
+
+.details{
+    padding:80px 20px;
+    text-align:center;
+}
+
+.details h2{
+    font-size:2.5rem;
+    margin-bottom:30px;
+}
+
+.detail-card{
+    max-width:600px;
+    margin:auto;
+    background:white;
+    padding:40px;
+    border-radius:25px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.detail-card p{
+    margin:15px 0;
+    font-size:1.1rem;
+}
+
+/* ========================= */
+/* GALLERY */
+/* ========================= */
+
+.gallery{
+    padding:80px 20px;
+    text-align:center;
+}
+
+.gallery h2{
+    margin-bottom:40px;
+    font-size:2.5rem;
+}
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.gallery-grid img{
+    width:100%;
+    border-radius:20px;
+}
+
+/* ========================= */
+/* FOOTER */
+/* ========================= */
+
+.footer{
+    background:#6b4b3e;
+    color:white;
+    text-align:center;
+    padding:40px 20px;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:2.8rem;
+}
+
+.hero h2{
+    font-size:1.2rem;
+}
+
+.box{
+    width:110px;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+        <h1>Menna's Henna Night</h1>
+        <h2>Join Us For A Magical Evening</h2>
+        <p>Celebrating Love, Joy & Tradition</p>
+    </div>
+
+</section>
+
+<!-- COUNTDOWN -->
+
+<section class="countdown-section">
+
+    <h2 class="countdown-title">Countdown To Henna Night</h2>
+
+    <div class="countdown">
+
+        <div class="box">
+            <span id="days">00</span>
+            <p>Days</p>
+        </div>
+
+        <div class="box">
+            <span id="hours">00</span>
+            <p>Hours</p>
+        </div>
+
+        <div class="box">
+            <span id="minutes">00</span>
+            <p>Minutes</p>
+        </div>
+
+        <div class="box">
+            <span id="seconds">00</span>
+            <p>Seconds</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- DETAILS -->
+
+<section class="details">
+
+    <h2>Event Details</h2>
+
+    <div class="detail-card">
+
+        <p>📅 20 December 2026</p>
+        <p>🕖 7:00 PM</p>
+        <p>📍 Cairo, Egypt</p>
+        <p>✨ Dress Code: Elegant Traditional</p>
+
+    </div>
+
+</section>
+
+<!-- GALLERY -->
+
+<section class="gallery">
+
+    <h2>Henna Inspiration</h2>
+
+    <div class="gallery-grid">
+
+        <img src="henna1.jpg" alt="">
+        <img src="henna2.jpg" alt="">
+        <img src="henna3.jpg" alt="">
+        <img src="henna4.jpg" alt="">
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    <h2>We Can't Wait To Celebrate With You ❤️</h2>
+
+</footer>
+
+<script>
+
+const targetDate = new Date("December 20, 2026 19:00:00").getTime();
+
+setInterval(() => {
+
+const now = new Date().getTime();
+const distance = targetDate - now;
+
+document.getElementById("days").innerHTML =
+Math.floor(distance / (1000 * 60 * 60 * 24));
+
+document.getElementById("hours").innerHTML =
+Math.floor((distance % (1000 * 60 * 60 * 24))
+/ (1000 * 60 * 60));
+
+document.getElementById("minutes").innerHTML =
+Math.floor((distance % (1000 * 60 * 60))
+/ (1000 * 60));
+
+document.getElementById("seconds").innerHTML =
+Math.floor((distance % (1000 * 60))
+/ 1000);
+
+},1000);
+
+</script>
+
+</body>
+</html>
